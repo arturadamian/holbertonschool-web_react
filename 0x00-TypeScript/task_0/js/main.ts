@@ -19,30 +19,19 @@ const secondSudent: Student = {
 
 const studentsList: Array<Student> = [ firstSudent, secondSudent ];
 
-const generateTable = (studentsList: Array<Student>) => {
-  const table = document.createElement('table') as HTMLTableElement;
-  const thead = table.createTHead();
-  let row = document.createElement('tr');
-  let name = document.createElement('th');
-  let location = document.createElement('th');
-  name.textContent = 'firstName';
-  location.textContent = 'location';
+const table = document.createElement('table') as HTMLTableElement;
+const tbody = document.createElement('tbody');
+
+studentsList.forEach((student: Student) => {
+  const row = document.createElement('tr');
+  const name = document.createElement('td');
+  const location = document.createElement('td');
+  name.textContent = student.firstName;
+  location.textContent = student.location;
   row.appendChild(name);
   row.appendChild(location);
-  thead.appendChild(row);
-  const tbody = document.createElement('tbody');
-  studentsList.forEach((student: Student) => {
-    row = document.createElement('tr');
-    name = document.createElement('td');
-    location = document.createElement('td');
-    name.textContent = student.firstName;
-    location.textContent = student.location;
-    row.appendChild(name);
-    row.appendChild(location);
-    tbody.appendChild(row);
-  });
-  
-  table.appendChild(tbody);
-  document.body.appendChild(table);
-}
-generateTable(studentsList);
+  tbody.appendChild(row);
+});
+
+table.appendChild(tbody);
+document.body.appendChild(table);
