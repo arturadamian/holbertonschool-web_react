@@ -1,0 +1,33 @@
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid rgb(218, 0, 0);
+  margin: 1em 0;
+  padding: 0;
+}
+.App-body {
+  height: 100px;
+  font-size: x-small;
+}
+.App-logo {
+  width: 80px;
+  height: 80px;
+}
+
+.App-header {
+  display: flex;
+  justify-content: flex-start;
+  color: rgb(218, 0, 0);
+  font-weight: bold;
+}
+.App-header p {
+  margin-top: 30px;
+}
+footer {
+  text-align: center;
+  font-size: x-small;
+}
+input, button {
+ margin: 3px;
+ font-size: x-small;
+}
