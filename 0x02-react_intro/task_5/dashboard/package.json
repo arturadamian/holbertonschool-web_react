@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  },
   "scripts": {
     "start-dev": "webpack-dev-server --mode development --hot",
-    "dev": "webpack --mode development --watch",
+    "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --config config/webpack.config.js",
     "test": "jest"
@@ -14,22 +19,22 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
     "css-loader": "^4.2.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
+    "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^6.0.0",
     "jest": "^26.4.0",
     "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "babel-loader": "^8.1.0",
-    "babel-preset-react": "^6.24.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "html-webpack-plugin": "^4.3.0"
   }
 }
