@@ -1,0 +1,13 @@
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid rgb(218, 0, 0);
+  margin: 1em 0;
+  padding: 0;
+}
+
+footer {
+  text-align: center;
+  font-size: x-small;
+}
+
