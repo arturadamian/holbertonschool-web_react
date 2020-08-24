@@ -1,0 +1,13 @@
+.Notifications {
+  border: 1px dotted rgb(218, 0, 0);
+  padding: 1px;
+  margin: 1px;
+  top: 0;
+  font-size: x-small;
+}
+ul li[data-notification-type="urgent"] {
+  color: red;
+}
+ul li[data-notification-type="default"] {
+  color: blue;
+}
