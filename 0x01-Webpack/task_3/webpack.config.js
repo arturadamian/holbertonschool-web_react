@@ -1,11 +1,19 @@
 const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry : "./js/dashboard_main.js",
+    entry: {
+      header: './modules/header/header.js',
+      body: './modules/body/body.js',
+      footer: './modules/footer/footer.js'
+    },
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
+    },
+    performance: {
+      maxAssetSize: 1000000
     },
     module: {
       rules: [
@@ -25,8 +33,18 @@ module.exports = {
       ]
     },
     devServer: {
-      contentBase: path.join(__dirname, 'public'),
+      contentBase: path.join(__dirname, 'public/public'),
       open: true,
       port: 8564
-    }
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'all'
+      }
+    },
+    plugins: [
+      new HTMLWebpackPlugin({
+        filename: 'public/index.html'
+      })
+    ]
 }
