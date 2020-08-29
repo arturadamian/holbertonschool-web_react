@@ -7,6 +7,7 @@ const NotificationItem = ({ type, value, html }) => {
 };
 
 NotificationItem.propTypes = {
+    id: PropTypes.number,
     type: PropTypes.string.isRequired,
     value: PropTypes.string,
     html: PropTypes.objectOf({

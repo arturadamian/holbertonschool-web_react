@@ -45,9 +45,6 @@ const Notifications = ({ displayDrawer, listNotifications }) => {
 
 Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
-}
-
-Notifications.propTypes = {
   listNotifications: PropTypes.arrayOf(NotificationItemShape)
 }
 

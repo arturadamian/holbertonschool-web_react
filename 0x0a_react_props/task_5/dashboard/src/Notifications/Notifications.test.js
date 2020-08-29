@@ -2,9 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Notifications from './Notifications';
 import NotificationItem from './NotificationItem';
-import listNotifications from '../App/App';
+import { listNotifications } from '../App/App';
 
-const wrapper = shallow(<Notifications displayDrawer={true}/>);
+console.log("+++++++++++", listNotifications)
 
 it('renders Notifications without crashing', () => {
   shallow(<Notifications displayDrawer={true}/>);
@@ -15,8 +15,8 @@ it('renders Notifications with list-props-empty without crashing', () => {
 });
 
 it('renders Notifica tions and the length of list is correct', () => {
-  const wrap = shallow(<Notifications listNotifications={listNotifications} displayDrawer={true}/>);
-  expect(wrap.find('NotificationItem').length).toEqual(3);
+  const wrapper = shallow(<Notifications listNotifications={listNotifications} displayDrawer={true}/>);
+  expect(wrapper.find('NotificationItem').length).toEqual(3);
 });
 
 it('renders NotificationItem without crashing', () => {
@@ -24,11 +24,13 @@ it('renders NotificationItem without crashing', () => {
 });
 
 it('the first NotificationItem element renders the right html', () => {
+  const wrapper = shallow(<Notifications listNotifications={listNotifications} displayDrawer={true}/>);
   expect(wrapper.find('NotificationItem').at(0).props()).toHaveProperty('type', 'default');
   expect(wrapper.find('NotificationItem').at(0).props()).toHaveProperty('value', 'New course available');
 });
 
 it('renders the <p>', () => {
+  const wrapper = shallow(<Notifications listNotifications={listNotifications} displayDrawer={true}/>);
     expect(
         wrapper.containsMatchingElement(
           <p>Here is the list of notifications</p>
